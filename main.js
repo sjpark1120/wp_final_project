@@ -34,8 +34,8 @@ let longitude = ''; //경도
 let time = new Date();
 let hours = time.getHours();
 
-const w_apikey = `${weather_apikey}`;
-const g_apikey = `${gps_apikey}`;
+const w_apikey = weather_apikey;
+const g_apikey = gps_apikey;
 let w_url = "";
 let g_url = "";
 
@@ -309,6 +309,22 @@ function shareFacebook() {
   var sendUrl = window.location.href; // 전달할 URL
   window.open("http://www.facebook.com/sharer.php?u=" + sendUrl);
 }
+
+
+function loadScript(src, callback) {
+  const script = document.createElement("script");
+  script.src = src;
+  script.onload = callback;
+  document.body.appendChild(script);
+}
+
+loadScript(
+  `https://maps.googleapis.com/maps/api/js?key=${g_apikey}&libraries=places&callback=initAutocomplete`,
+  () => {
+    // 로드 완료 후 실행할 코드
+    console.log('성공');
+  }
+);
 
 // 날씨 정보 불러오는 동안 로딩
 $html.style.overflow = 'hidden'; //로딩 중 스크롤 방지
