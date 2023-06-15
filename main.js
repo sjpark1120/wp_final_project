@@ -26,8 +26,6 @@ const $xbtn = document.querySelector("#Xbtn");
 const $loc_input = document.getElementById("loc_input");
 const $set_btn = document.querySelector("#set_btn");
 
-require('dotenv').config();
-
 let autocomplete;
 
 let latitude = ''; //위도
@@ -36,8 +34,8 @@ let longitude = ''; //경도
 let time = new Date();
 let hours = time.getHours();
 
-const w_apikey = process.env.weather_apikey;
-const g_apikey = process.env.gps_apikey;
+const w_apikey = weather_apikey;
+const g_apikey = gps_apikey;
 let w_url = "";
 let g_url = "";
 
