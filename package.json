@@ -1,0 +1,14 @@
+{
+  "name": "final_proj",
+  "version": "1.0.0",
+  "description": "웹프로그래밍 기말과제 (실시간 기온별 옷차림 추천사이트)\r +link: https://sjpark1120.github.io/wp_final_project/",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.1.4"
+  }
+}
