@@ -1,0 +1,438 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'NanumSquareBold';
+
+}
+
+.loader{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+.loader div{
+  color: white;
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  margin: 0 0 0 -120px;
+  font-size: 25px;
+}
+
+#load_img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  margin: -190px 0 0 -150px;
+}
+
+body {
+  margin: 0 auto;
+  width: 1080px;
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  min-height: 97.3vh;
+}
+
+header {
+  position: absolute;
+  width: 1080px;
+  border-radius: 20px 20px 0px 0px;
+  z-index: 1;
+}
+
+/* 스크롤 유도 아이콘 */
+#scroll {
+  z-index: 1;
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#scroll a {
+  padding-top: 60px;
+}
+
+.scroll_icon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 30px;
+  height: 50px;
+  margin-left: -15px;
+  border: 2px solid rgba(40, 40, 40, 0.5);
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+
+.scroll_icon.dark {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 30px;
+  height: 50px;
+  margin-left: -15px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+
+.scroll_icon::before {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: rgb(40, 40, 40, 0.5);
+  border-radius: 100%;
+  -webkit-animation: sdb 2s infinite;
+  animation: sdb 2s infinite;
+  box-sizing: border-box;
+}
+.scroll_icon.dark::before {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 100%;
+  -webkit-animation: sdb 2s infinite;
+  animation: sdb 2s infinite;
+  box-sizing: border-box;
+}
+
+@-webkit-keyframes sdb {
+  0% {
+    -webkit-transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: translate(0, 20px);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sdb {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  80% {
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+#mask {  
+  position:absolute;  
+  height: 100vh;
+  width: 100vw;
+  left:0;
+  top:0;
+  z-index:9000;  
+  background-color:rgba(0, 0, 0, 0.5);  
+  display:none;  
+}
+
+#loc_set{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-top: 30px;
+  text-align: center;
+  background-color: rgb(248 248 248 / 79%);
+  width: 300px;
+  height: 200px;
+  margin: -100px 0 0 -150px;
+  border-radius: 20px;
+  z-index:10000;  
+  display: none;
+}
+
+#Xbtn{
+  display: block;
+  margin: auto;
+  margin-top: 65px;
+  width: 40px;
+}
+
+.set_loc_btn{
+  cursor: pointer;
+}
+
+.container {
+  opacity: 0.95;
+  scroll-snap-type: y mandatory;
+  height: 95vh;
+  overflow: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(17, 17, 26, 0.1), 0 16px 56px rgba(17, 17, 26, 0.1), 0 24px 80px rgba(172, 172, 175, 0.1), 0 0 0 currentColor, 0 0 0 #00ffc4, 0 0 0 currentColor;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+section {
+  scroll-snap-align: start;
+  height: 100vh;
+  padding: 170px 20px 20px 20px;
+}
+
+.page{
+  background-color: whitesmoke;
+}
+
+.page.dark{
+  background-color: #1c222b;
+}
+
+.txt{
+  color: rgb(40, 40, 40);
+}
+
+.txt.dark{
+  color: rgb(226 226 226);
+}
+
+#footer_page {
+  text-align: center;
+}
+
+nav {
+  float: right;
+  margin-top: 70px;
+}
+
+nav a {
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+nav a:nth-child(5) {
+  margin-right: 40px;
+}
+
+nav a:hover{
+  color: grey !important;
+  
+}
+
+#logo_img {
+  height: 100%;
+  width: 230px;
+  margin-top: 15px;
+}
+
+#weather_txt {
+  width: 50%;
+  float: left;
+  padding-left: 40px
+}
+
+#weather {
+  font-size: 50px;
+  color: cornflowerblue;
+}
+
+#weather_imgdiv {
+  padding-left: 50px;
+  width: 50%;
+  float: left;
+}
+
+#temperature {
+  font-size: 170px;
+  font-family: 'NanumSquareExtraBold';
+}
+
+#location {
+  color: gray;
+  font-size: 40px;
+}
+
+#gps_icon {
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  background-image: url(./image/gps_icon.png);
+  background-color: transparent;
+  vertical-align: sub
+}
+
+#apparent_temperature {
+  font-size: 30px;
+  font-family: 'NanumSquareLight';
+}
+
+#weather_img {
+  height: 440px;
+  width: 440px;
+  background-image: url('./image/Day.png');
+  background-size: cover;
+  background-position: 0% 0%;
+  display: inline-block;
+  filter: drop-shadow(0 0 55px rgba(255, 196, 57, 0.25));
+}
+
+#outfit_txt {
+  width: 50%;
+  float: left;
+  padding-right: 50px;
+  padding-left: 134px;
+}
+
+#outfit_txt ul{
+  padding-left: 27px;
+  font-size: 32px
+}
+
+#outfit_txt ul li{
+  font-family: 'NanumSquareLight';
+}
+
+#temperature_second{
+  font-size: 120px;
+  font-family: 'NanumSquareExtraBold';
+}
+
+#recommed_txt{
+  font-size: 65px;
+}
+
+#weather_description{
+  font-size: 20px;
+  color: gray;
+}
+
+#outfit_img {
+  width: 50%;
+  float: left;
+  padding-left: 40px;
+  text-align: center;
+}
+
+#cloth_img{
+ width: auto;
+ height: 400px;
+}
+
+#share_button button {
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+#share_kakao {
+  background: url("./image/icon-kakao.png");
+}
+
+#share_facebook {
+  background: url("./image/icon-facebook.png");
+}
+
+#share_twitter {
+  background: url("./image/icon-twitter.png");
+}
+
+#share_link {
+  background: url("./image/icon_link.png");
+}
+
+footer {
+  margin-top: 170px;
+}
+
+@media (max-width: 767px){
+	/* 모바일 */
+  body{
+    width: 96%;
+  }
+  .container{
+    overflow-x: hidden;
+  }
+  #weather_txt{
+    width: 100%;
+    height: 50%;
+  }
+  nav{
+    display: none;
+  }
+  header{
+    width: 100%;
+  }
+  #load_img{
+    width: 190px;
+    margin: -105px 0 0 -95px;
+  }
+  #weather_img{
+    height: 350px;
+    width: 350px;
+  }
+  #temperature{
+    font-size: 150px;
+    margin-bottom: -25px;
+  }
+  #outfit_img{
+    width: 100%;
+    padding: 0;
+  }
+  #cloth_img{
+    height: 258px;
+  }
+  #outfit_txt{
+    width: 100%;
+    padding: 0px;
+  }
+  #temperature_second{
+    display: inline-block;
+    font-size: 90px;
+  }
+  #recommed_txt{
+    font-size: 50px;
+  }
+  #share_img{
+    width: 100%;
+  }
+  footer{
+    margin-top: 380px;
+  }
+}

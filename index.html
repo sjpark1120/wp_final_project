@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오늘 뭐입지</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="loader">
+    <img src="./image/sorry.gif" alt="로딩" id="load_img">
+    <div>gps 권한을 허용해주세요!</div>
+  </div>
+  <header>
+    <img id="logo_img" src="./image/logo.png" alt="logo">
+    <nav>
+      <a class="txt set_loc_btn">위치설정</a>
+      <a class="txt" href="#weather_page">현재기온</a>
+      <a class="txt" href="#outfit_page">옷차림추천</a>
+      <a class="txt" href="#footer_page">공유</a>
+      <a class="txt" href="#comment_page">방명록</a>
+    </nav>
+  </header>
+  <!-- 스크롤 유도 표시 -->
+  <div id="scroll">
+    <a href=""><span class="scroll_icon"></span></a>
+  </div>
+  <div class="container">
+    <div id="mask"></div>
+    <div id="loc_set">
+      <h2>위치 설정</h2>
+      <input type="text" placeholder="지역을 입력해주세요" id="loc_input"/>
+      <button id="set_btn">설정</button>
+      <button id="Xbtn">x</button>
+    </div>
+    <section id="weather_page" class="page">
+      <div id="weather_txt" class="txt">
+        <div id="temperature">00°</div>
+        <div id="weather">맑음</div>
+        <span id="location" class="set_loc_btn">위치설정</span>
+        <button id="gps_icon" class="set_loc_btn"></button>
+        <div id="apparent_temperature">습도 00% 체감온도 00°</div>
+      </div>
+      <div id="weather_imgdiv">
+        <div id="weather_img"></div>
+      </div>
+    </section>
+    <section id="outfit_page" class="page">
+      <div id="outfit_img">
+        <div id="weather_description">위치설정이 필요합니다.</div>
+        <img src="./image/cloth/20.png" alt="outfit_image" id="cloth_img">
+      </div>
+      <div id="outfit_txt" class="txt">
+        <div id="temperature_second">00°</div>
+        <div id="recommed_txt">추천 옷차림</div>
+        <ul id="outfit_list">
+        </ul>
+      </div>
+    </section>
+    <section id="footer_page" class="page">
+      <img id="share_img" src="./image/aozora2.png" alt="">
+      <h2 class="txt">공유하기</h2>
+      <div id="share_button">
+        <button id="share_link" onclick="shareLink()"></button>
+        <button id="share_facebook" onclick="shareFacebook()"></button>
+        <button id="share_twitter" onclick="shareTwitter()"></button>
+      </div>
+      <footer>
+        <hr>
+        <p class="txt">
+          <span>201911791 박수진</span><br />
+          <span>이메일 : asgol9609@gmail.com</span>
+          <a href='https://github.com/sjpark1120' target='_blank'>Github</a><br />
+          <span>Copyright 2023. sujin. All Rights Reserved.</span>
+        </p>
+      </footer>
+    </section>
+  </div>
+</body>
+<script src="key.js"></script>
+<script src="main.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6_sam8e-czbrqtkJFRRgbeMPD14lzjPA&libraries=places&callback=initAutocomplete" async defer>
+</script>
+</html>
