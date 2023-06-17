@@ -42,14 +42,14 @@ app.post('/guestbook/delete', (req, res) => {
   const entryIndex = req.body.index;
   const password = req.body.password;
 
-  // Verify the password for the entry to be deleted
+  // 글 삭제시 패스워드 확인
   if (guestbookEntries[entryIndex] && guestbookEntries[entryIndex].password === password) {
-    // Remove the entry from the guestbookEntries array
+    // guestbookEntries 에서 entry제거
     guestbookEntries.splice(entryIndex, 1);
-    // Save the updated entries to the JSON file
+    // Json에 삭제내용 반영
     fs.writeFileSync(guestbookEntriesFile, JSON.stringify(guestbookEntries));
     res.redirect('/guestbook');
-  } else {
+  } else {//패스워드 틀린경우
     res.redirect('/guestbook?wrongPassword=true');
     return;
   }
@@ -61,7 +61,7 @@ app.get('/guestbook', (req, res) => {
       console.error(err);
       return res.status(500).send('Internal Server Error');
     }
-    // Modify the data variable to include the guestbook entries
+    // 방명록 변경
     const modifiedData = modifyGuestbookHTML(data, guestbookEntries);
     if (req.query.wrongPassword) {
       const finalData = modifiedData.replace('{{wrongPassword}}', 'true');
@@ -76,13 +76,8 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
-// Helper function to modify the guestbook.html file with the entries
+//html에 적용
 function modifyGuestbookHTML(data, entries) {
-  // Modify the HTML file as per your requirements
-  // You can use string manipulation or template literals to insert the entries into the HTML
-
-  // For example, let's assume you have a placeholder in the HTML file like "{{entries}}"
-  // You can replace it with the actual guestbook entries
   const entriesHTML = entries
     .map((entry, index) => `<li>${entry.name} <span>${new Date(entry.timestamp).toLocaleString()}</span><hr> ${entry.message}<form action="/guestbook/delete" method="post" class="list"><input type="hidden" name="index" value="${index}"><input type="password" name="password" placeholder="Password"><button type="submit">삭제</button></form></li>`)
     .join('');

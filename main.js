@@ -214,7 +214,6 @@ let hidden_scrollicon = new IntersectionObserver((e) => {
 function onCilck(){
   $loc_set.style.display ="block";
   $mask.style.display ="block";
-  //$body.style.filter = "blur(5px)";
 }
 
 function onClose(){
