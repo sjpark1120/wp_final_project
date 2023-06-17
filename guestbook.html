@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>방명록</title>
+  <link rel="icon" href="./image/fashion_hanger.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img id="logo_img" src="./image/logo.png" alt="logo">
+    <nav>
+      <a class="txt" href="/">현재기온</a>
+      <a class="txt" href="/#outfit_page">옷차림추천</a>
+      <a class="txt" href="/#footer_page">공유</a>
+      <a class="txt" href="/guestbook" id="last_nav">방명록</a>
+    </nav>
+  </header>
+  <div class="container">
+  <section class="page" id="guestbook_page">
+    <h1 class="txt">방명록 작성</h1>
+    <form action="/guestbook" method="post" id="wr">
+      <input type="text" name="name" placeholder="Name" autocomplete="off" required>
+      <input type="password" name="password" placeholder="Password" autocomplete="new-password" required><br>
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button type="submit">작성</button>
+    </form>
+    <br>
+    <h1 class="txt">방명록 목록</h1>
+    <ul class="guestbook_ul txt">
+      {{entries}}
+    </ul>
+  </section>
+  </div>
+</body>
+<script src="guestbook.js"></script>
+</html>
