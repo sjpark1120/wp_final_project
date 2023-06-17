@@ -242,7 +242,7 @@ nav a {
   font-size: 20px;
 }
 
-nav a:nth-child(5) {
+#last_nav {
   margin-right: 40px;
 }
 
@@ -379,6 +379,49 @@ nav a:hover{
 
 footer {
   margin-top: 170px;
+}
+
+.guestbook_ul{
+  padding: 6px;
+    overflow: auto;
+    height: 69%;
+}
+
+textarea{
+  height: 100%;
+  width: 94%;
+}
+
+#wr{
+  background: #cacaca;
+  padding: 7px;
+  border-radius: 7px;
+}
+
+.guestbook_ul form{
+  float: right;
+}
+
+.guestbook_ul li{
+  background-color: #ececec;
+  margin-bottom: 10px;
+  min-height: 75px;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.guestbook_ul span{
+  color: grey;
+  font-size: 13px;
+}
+
+#wr button{
+  vertical-align: top;
+  height: 30.4px;
+}
+
+#guestbook_page{
+  padding: 170px 40px 20px 40px;
 }
 
 @media (max-width: 767px){

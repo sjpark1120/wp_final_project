@@ -62,9 +62,7 @@ function loadlocation() {
           } else {
             const loc_a = data.results[0].address_components[2].long_name;
             const loc_b = data.results[0].address_components[1].long_name;
-            console.log(data.results[0].address_components);
             $location.innerText = `${loc_a} ${loc_b}`;
-
           }
         })
       
@@ -207,7 +205,6 @@ let hidden_scrollicon = new IntersectionObserver((e) => {
   e.forEach(entry=>{
     if(entry.isIntersecting){
       $scroll_icon.style.display = "none";
-      console.log(1)
     }else{
       $scroll_icon.style.display ="block";
     }
@@ -233,20 +230,8 @@ function initAutocomplete(){
     componentRestrictions: {'country':['kr']},
     fields: ['place_id', 'geometry', 'name']
   });
-  console.log(autocomplete);
-  //autocomplete.addEventListener('place_changed', onPlaceChanged);
   $set_btn.addEventListener('click', onSet);
 }
-
-// function onPlaceChanged(){
-//   var place = autocomplete.getPlace();
-//   if(!place.geometry){
-//     $loc_input.placehold = "지역을 선택해주세요."
-//     console.log("??")
-//   }else{
-//     console.log(place)
-//   }
-// }
 
 function onSet() {
   let place = autocomplete.getPlace();
@@ -261,7 +246,6 @@ function onSet() {
       } else {
         const loc_a = data.results[0].address_components[2].long_name;
         const loc_b = data.results[0].address_components[1].long_name;
-        console.log(data.results[0].address_components);
         $location.innerText = `${loc_a} ${loc_b}`;
       }
     });
