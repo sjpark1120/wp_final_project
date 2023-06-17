@@ -79,7 +79,7 @@ app.get('/', function (req, res) {
 //html에 적용
 function modifyGuestbookHTML(data, entries) {
   const entriesHTML = entries
-    .map((entry, index) => `<li>${entry.name} <span>${new Date(entry.timestamp).toLocaleString("ko-KR")}</span><hr> ${entry.message}<form action="/guestbook/delete" method="post" class="list"><input type="hidden" name="index" value="${index}"><input type="password" name="password" placeholder="Password"><button type="submit">삭제</button></form></li>`)
+    .map((entry, index) => `<li>${entry.name} <span>${new Date(entry.timestamp).toLocaleString("ko-KR",{ timeZone: "Asia/Seoul" })}</span><hr> ${entry.message}<form action="/guestbook/delete" method="post" class="list"><input type="hidden" name="index" value="${index}"><input type="password" name="password" placeholder="Password"><button type="submit">삭제</button></form></li>`)
     .join('');
   const modifiedData = data.replace('{{entries}}', `${entriesHTML}`);
 
