@@ -72,8 +72,19 @@ app.get('/guestbook', (req, res) => {
   });
 });
 
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+app.get('/', (req, res) => {
+  fs.readFile(__dirname + '/index.html', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('Internal Server Error');
+    }
+    // Modify the HTML data to include the API key
+    const modifiedData = data
+      .replace('{{API_KEY_w}}', process.env.weather_apikey)
+      .replace('{{API_KEY_g}}', process.env.gps_apikey);
+
+    res.send(modifiedData);
+  });
 });
 
 //html에 적용
