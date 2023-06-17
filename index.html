@@ -19,6 +19,24 @@
   </div>
   <header>
     <img id="logo_img" src="./image/logo.png" alt="logo">
+    <div class="mobile_btn">
+      <input type="checkbox" id="hamburger" />
+      <label for="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="sidebar">
+        <h2 style="text-align: center; position: relative; top: 75px;">오늘뭐입지?</h2>
+        <hr style="position: relative; top:100px; border: solid 1px black;">
+        <ul class="nav_mobile">
+          <li><a href="/">실시간 날씨</a></li>
+          <li><a href="/#outfit_page">옷차림 추천</a></li>
+          <li><a href="/#footer_page">공유</a></li>
+          <li><a href="/guestbook">방명록</a></li>
+        </ul>
+      </div>
+    </div>
     <nav>
       <a class="txt set_loc_btn">위치설정</a>
       <a class="txt" href="#weather_page">현재기온</a>
@@ -37,7 +55,7 @@
       <h2>위치 설정</h2>
       <input type="text" placeholder="지역을 입력해주세요" id="loc_input"/>
       <button id="set_btn">설정</button>
-      <button id="Xbtn">x</button>
+      <button id="Xbtn">닫기</button>
     </div>
     <section id="weather_page" class="page">
       <div id="weather_txt" class="txt">

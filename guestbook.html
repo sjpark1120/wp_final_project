@@ -13,8 +13,26 @@
 <body>
   <header>
     <img id="logo_img" src="./image/logo.png" alt="logo">
+    <div class="mobile_btn">
+      <input type="checkbox" id="hamburger" />
+      <label for="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="sidebar">
+        <h2 style="text-align: center; position: relative; top: 75px;">오늘뭐입지?</h2>
+        <hr style="position: relative; top:100px; border: solid 1px black;">
+        <ul class="nav_mobile">
+          <li><a href="/">실시간 날씨</a></li>
+          <li><a href="/#outfit_page">옷차림 추천</a></li>
+          <li><a href="/#footer_page">공유</a></li>
+          <li><a href="/guestbook">방명록</a></li>
+        </ul>
+      </div>
+    </div>
     <nav>
-      <a class="txt" href="/">현재기온</a>
+      <a class="txt" href="/">실시간날씨</a>
       <a class="txt" href="/#outfit_page">옷차림추천</a>
       <a class="txt" href="/#footer_page">공유</a>
       <a class="txt" href="/guestbook" id="last_nav">방명록</a>

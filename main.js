@@ -34,8 +34,8 @@ let longitude = ''; //경도
 let time = new Date();
 let hours = time.getHours();
 
-const w_apikey = '{{API_KEY_w}}';
-const g_apikey = '{{API_KEY_g}}';
+const w_apikey = weather_apikey;
+const g_apikey = gps_apikey;
 let w_url = "";
 let g_url = "";
 
