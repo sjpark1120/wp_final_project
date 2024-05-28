@@ -2,7 +2,7 @@
 **웹프로그래밍 기말과제**
 '오늘뭐입지'는 사용자가 현재 위치의 날씨(기온)에 따라 옷차림을 계획할 수 있도록 도와주는 웹 사이입니다. 사용자가 그날의 날씨에 맞는 옷을 입을 수 있도록 실시간 날씨와 의상 추천을 제공합니다.
 
-+ link : https://port-0-weatherwear-7xwyjq992llix76dq3.sel4.cloudtype.app/
++ link : https://weather-wear1120.netlify.app/
 
 ![image](https://github.com/sjpark1120/wp_final_project/assets/69676617/af6e1dd9-a3b3-425a-9bcc-9f784c478e12)
 ![image](https://github.com/sjpark1120/wp_final_project/assets/69676617/5849611b-659d-4097-803d-922731e5078e)
